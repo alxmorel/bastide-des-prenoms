@@ -1,0 +1,63 @@
+// @import url(_root.scss);
+
+@font-face {
+  font-family: apercu-regular;
+  src: url(../public/fonts/apercu_regular_pro.otf);
+  font-weight: 300;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: bendungan-signature;
+  src: url(../public/fonts/Bendungan_Signature.otf);
+  font-weight: 300;
+  font-display: auto;
+}
+
+body {
+  font-family: apercu-regular, sans-serif, 'Google Work', 'IBM Plew Serif';
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+  font-family: apercu-regular, sans-serif, 'Google Work', 'IBM Plew Serif';
+  font-weight: 100;
+}
+
+$bdp_white: #fff;
+$bdp_light_white: #fafafa;
+$bdp_very_light_grey: rgb(240, 240, 240);
+$bdp_light_grey: rgb(231, 231, 231);
+$bdp_medium_grey: rgb(190, 190, 190);
+
+$bdp_green_light: #81ffcb;
+$bdp_green_medium: #23dd90;
+$bdp_purple_medium: #7667ff;
+
+$bdp_light_green: #f8ffe9;
+$bdp_desert_sand: #ddbea8;
+$bdp_cal_poly_green: #214e34;
+$bdp_grey: #747c92;
+$bdp_purple: #3d0b37;
+
+$bdp_default_black: rgb(63, 63, 63, 1);
+
+a {
+  color: rgb(61, 61, 61);
+  text-decoration: none;
+  list-style-type: none;
+  transition: 0.5s all ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: #000;
+  }
+}
