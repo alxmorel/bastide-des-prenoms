@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.bc2d6b60.css",
-    "main.js": "/static/js/main.46bdc970.js",
-    "static/js/453.f38eea9f.chunk.js": "/static/js/453.f38eea9f.chunk.js",
-    "static/media/apercu_regular_pro.otf": "/static/media/apercu_regular_pro.36c9dd0f0eebc290890b.otf",
-    "static/media/Bendungan_Signature.otf": "/static/media/Bendungan_Signature.019fa9edb4db853ffa9a.otf",
-    "index.html": "/index.html",
-    "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.bc2d6b60.css.map": "/static/css/main.bc2d6b60.css.map",
-    "main.46bdc970.js.map": "/static/js/main.46bdc970.js.map",
-    "453.f38eea9f.chunk.js.map": "/static/js/453.f38eea9f.chunk.js.map"
+    "main.css": "/bastide-des-prenoms/static/css/main.6a2c15f5.css",
+    "main.js": "/bastide-des-prenoms/static/js/main.2be2604a.js",
+    "static/js/453.f38eea9f.chunk.js": "/bastide-des-prenoms/static/js/453.f38eea9f.chunk.js",
+    "static/media/apercu_regular_pro.otf": "/bastide-des-prenoms/static/media/apercu_regular_pro.36c9dd0f0eebc290890b.otf",
+    "static/media/Bendungan_Signature.otf": "/bastide-des-prenoms/static/media/Bendungan_Signature.019fa9edb4db853ffa9a.otf",
+    "index.html": "/bastide-des-prenoms/index.html",
+    "static/media/getFetch.cjs": "/bastide-des-prenoms/static/media/getFetch.40f37ddea2378391108f.cjs",
+    "main.6a2c15f5.css.map": "/bastide-des-prenoms/static/css/main.6a2c15f5.css.map",
+    "main.2be2604a.js.map": "/bastide-des-prenoms/static/js/main.2be2604a.js.map",
+    "453.f38eea9f.chunk.js.map": "/bastide-des-prenoms/static/js/453.f38eea9f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc2d6b60.css",
-    "static/js/main.46bdc970.js"
+    "static/css/main.6a2c15f5.css",
+    "static/js/main.2be2604a.js"
   ]
 }
