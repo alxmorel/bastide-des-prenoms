@@ -13,17 +13,17 @@ import { useTranslation } from 'react-i18next'
 function Home() {
   const { t } = useTranslation()
 
-  const onChange = (index, item) => {
-    console.log(`Slide changed to index ${index}`)
-  }
+  // const onChange = (index, item) => {
+  //   console.log(`Slide changed to index ${index}`)
+  // }
 
-  const onClickItem = (index, item) => {
-    console.log(`Clicked item: ${item}`)
-  }
+  // const onClickItem = (index, item) => {
+  //   console.log(`Clicked item: ${item}`)
+  // }
 
-  const onClickThumb = (index, item) => {
-    console.log(`Clicked thumb: ${item}`)
-  }
+  // const onClickThumb = (index, item) => {
+  //   console.log(`Clicked thumb: ${item}`)
+  // }
 
   // const itemData = [
   //   {
@@ -51,7 +51,7 @@ function Home() {
   return (
     <div className="home_container">
       <div className="home_content">
-        <div className="carousel_container">
+        {/* <div className="carousel_container">
           <Carousel
             className="custom_carousel"
             showArrows={true}
@@ -71,7 +71,6 @@ function Home() {
                 src={'/bastide-des-prenoms/image/bastide.jpg'}
                 alt="Une bastide et son jardin fleuri"
               />
-              {/* <p className="legend">Legend 1</p> */}
             </div>
             <div>
               <img
@@ -98,6 +97,16 @@ function Home() {
               />
             </div>
           </Carousel>
+        </div> */}
+
+        <div className="image_container">
+          <h2 className="gimic">Culture par Nature</h2>
+          <div className="image-wrapper">
+            <img
+              src="/bastide-des-prenoms/image/bastide_exterieur_1.jpg"
+              alt=""
+            />
+          </div>
         </div>
 
         <div className="welcome_title">

@@ -9,12 +9,13 @@ import Contact from './pages/contact/Contact'
 import APropos from './pages/a-propos/APropos'
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom' //react router pour l'utilisation classique
 import { HashRouter as Router, Route, Routes } from 'react-router-dom' //Hashrouter pour le github pages
+import { useTranslation } from 'react-i18next'
 
 function App() {
   const cookieEnabled = localStorage.getItem('cookieEnabled')
 
   const [cookieModalShow, setcookieModalShow] = useState(!cookieEnabled)
-
+  const { t } = useTranslation()
   const handleCookieAccept = () => {
     if (navigator.cookieEnabled) {
       document.cookie =
@@ -47,9 +48,7 @@ function App() {
           setModalShow={setcookieModalShow}
           confirmAction={handleCookieAccept}
           leaveAction={handleCookieRefuse}
-          description={
-            'La Bastide des Prénoms uses cookies to deliver and enhance the quality of its services and to analyze traffic. If you agree, cookies are also used to serve advertising and to personalize the content and advertisements that you see. Learn more.'
-          }
+          description={t('cookies_legacy')}
           accept={'AGREE'}
           refused={'NO THANKS'}
           cookieModal={true}
