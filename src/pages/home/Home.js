@@ -7,9 +7,12 @@ import Box from '@mui/material/Box'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe, faHouse } from '@fortawesome/free-solid-svg-icons'
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import { useTranslation } from 'react-i18next'
 
 function Home() {
+  const { t } = useTranslation()
+
   const onChange = (index, item) => {
     console.log(`Slide changed to index ${index}`)
   }
@@ -61,6 +64,7 @@ function Home() {
             emulateTouch={true}
             stopOnHover={true}
             interval={4000}
+            swipeScrollTolerance={5}
           >
             <div>
               <img
@@ -94,6 +98,56 @@ function Home() {
               />
             </div>
           </Carousel>
+        </div>
+
+        <div className='welcome_title'>
+          <p>Hello and welcome guest &#9996;&#127995;</p>
+          <p>we're 100% dedicated to Bollène !</p>
+        </div>
+
+        <div className='container_global_infos'>
+          <div className='global_info'>
+            <div className='icon'>
+              <img src='/image/icon/bed.svg' alt='fenetres ouvertes représentant un grand espace dans nos chambres' width={80} />
+            </div>
+            <p><b>A lot of space</b> in our room</p>
+          </div>
+          <div className='global_info'>
+            <div className='icon'>
+              <img src='/image/icon/olive-tree-bg_green.svg' alt='Relaxation, divertissement et détente assurés' width={80} />
+            </div>
+            <p><b>Relaxation</b> assurée</p>
+          </div>
+          <div className='global_info'>
+            <div className='icon'>
+              <img src='/image/icon/fireplace.svg' alt='Espaces conviviaux de détente seul comme à plusieurs' width={80} />
+            </div>
+            <p><b>Ambiance</b> chaleureuse et accueillante </p>
+          </div>
+          <div className='global_info'>
+            <div className='icon'>
+              <img src='/image/icon/window.svg' alt='Chambre avec vue dégagée' width={80} />
+            </div>
+            <p><b>Vue dégagée</b> le charme provençal</p>
+          </div>
+          {/* <div className='global_info'>
+            <div className='icon'>
+              <img src='/image/icon/shower_1.svg' alt='Chaque chambre contient une salle de bain privative' width={80} />
+            </div>
+            <p><b>Private bathroom</b> in our room</p>
+          </div> */}
+          <div className='global_info'>
+            <div className='icon'>
+              <img src='/image/icon/sink.svg' alt='Chaque chambre contient une salle de bain privative' width={80} />
+            </div>
+            <p><b>{t('private_bathroom')}</b> {t('your_private_one')}</p>
+          </div>
+          <div className='global_info'>
+            <div className='icon'>
+              <img src='/image/icon/doorknob.svg' alt='Chaque chambre contient une salle de bain privative' width={80} />
+            </div>
+            <p><b>{t('private_intimity')}</b> {t('private_intimity_1')}</p>
+          </div>
         </div>
 
         <div className="bedrooms">
