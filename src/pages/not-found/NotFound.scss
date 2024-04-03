@@ -1,0 +1,34 @@
+@use '../../App.scss' as *;
+
+.notFound-container {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+  .error-svg {
+    width: 100px;
+    height: 100px;
+    fill: #e74c3c; /* Couleur du SVG */
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #3498db; /* Couleur du lien */
+    text-decoration: none;
+    font-weight: bold;
+  }
+}

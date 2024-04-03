@@ -24,23 +24,23 @@ function Home() {
 
   const itemData = [
     {
-      img: 'image/bastide.jpg',
+      img: '/bastide-des-prenoms/image/bastide.jpg',
       title: 'Bed',
     },
     {
-      img: 'image/champ_lavande.jpg',
+      img: '/bastide-des-prenoms/image/champ_lavande.jpg',
       title: 'Books',
     },
     {
-      img: 'image/ciel_bleu.jpg',
+      img: '/bastide-des-prenoms/image/ciel_bleu.jpg',
       title: 'Sink',
     },
     {
-      img: 'image/volets.jpg',
+      img: '/bastide-des-prenoms/image/volets.jpg',
       title: 'Kitchen',
     },
     {
-      img: 'image/convivialite.jpg',
+      img: '/bastide-des-prenoms/image/convivialite.jpg',
       title: 'Blinds',
     },
   ]
@@ -64,32 +64,32 @@ function Home() {
           >
             <div>
               <img
-                src={'image/bastide.jpg'}
+                src={'/bastide-des-prenoms/image/bastide.jpg'}
                 alt="Une bastide et son jardin fleuri"
               />
               {/* <p className="legend">Legend 1</p> */}
             </div>
             <div>
               <img
-                src={'image/champ_lavande.jpg'}
+                src={'/bastide-des-prenoms/image/champ_lavande.jpg'}
                 alt="Un vue dégagée donnant sur un magnifique champ de lavande"
               />
             </div>
             <div>
               <img
-                src={'image/ciel_bleu.jpg'}
+                src={'/bastide-des-prenoms/image/ciel_bleu.jpg'}
                 alt="Des pins et un ciel bleu, la campagne du Vaucluse"
               />
             </div>
             <div>
               <img
-                src={'image/volets.jpg'}
+                src={'/bastide-des-prenoms/image/volets.jpg'}
                 alt="Une bastide tout en pierre typique de la région"
               />
             </div>
             <div>
               <img
-                src={'image/convivialite.jpg'}
+                src={'/bastide-des-prenoms/image/convivialite.jpg'}
                 alt="Des moments de partage conviviaux"
               />
             </div>
@@ -131,7 +131,10 @@ function Home() {
                 <h3>Miellerie</h3>
                 <p>Cultivez votre propre miel</p>
               </div>
-              <img src="image/miellerie.jpg" alt="Cultivez votre propre miel" />
+              <img
+                src="/bastide-des-prenoms/image/miellerie.jpg"
+                alt="Cultivez votre propre miel"
+              />
             </div>
             <div className="activity">
               <div className="activity_content">
@@ -139,7 +142,7 @@ function Home() {
                 <p>Promenez-vous dans les champs de lavande</p>
               </div>
               <img
-                src="image/catalogue-Lavandes-champs-30.jpg"
+                src="/bastide-des-prenoms/image/catalogue-Lavandes-champs-30.jpg"
                 alt="Promenez-vous dans les champs de lavande"
               />
             </div>
@@ -149,7 +152,7 @@ function Home() {
                 <p>Admirez de somptueux oliviers de provence</p>
               </div>
               <img
-                src="image/olivier.jpg"
+                src="/bastide-des-prenoms/image/olivier.jpg"
                 alt="Admirez de somptueux oliviers de provence"
               />
             </div>
@@ -159,7 +162,7 @@ function Home() {
                 <p>Profitez d'un moment de détente dans notre espace dédié</p>
               </div>
               <img
-                src="image/piscine_provence.png"
+                src="/bastide-des-prenoms/image/piscine_provence.png"
                 alt="Profitez d'un moment de détente dans notre espace de baignade dédié"
               />
             </div>

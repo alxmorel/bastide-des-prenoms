@@ -20,7 +20,7 @@ function Header() {
       <nav>
         <img
           className="bastide_logo"
-          src={'/image/bastideDesPrenoms_logo_1.svg'}
+          src={'/bastide-des-prenoms/image/bastideDesPrenoms_logo_1.svg'}
           alt="Logo Bastide Des Prenoms"
           height={80}
           onClick={() => navigate('/')}
@@ -35,7 +35,7 @@ function Header() {
         </div>
         <img
           className="menu-hamburger"
-          src={'/image/burger-menu.svg'}
+          src={'/bastide-des-prenoms/image/burger-menu.svg'}
           alt="burger menu icon"
           height={35}
         />

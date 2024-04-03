@@ -6,8 +6,9 @@ import Modal from './components/modal/Modal'
 import Home from './pages/home/Home'
 import Chambre from './pages/chambre/Chambre'
 import Contact from './pages/contact/Contact'
-
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import APropos from './pages/a-propos/APropos'
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom' //react router pour l'utilisation classique
+import { HashRouter as Router, Route, Routes } from 'react-router-dom' //Hashrouter pour le github pages
 
 function App() {
   const cookieEnabled = localStorage.getItem('cookieEnabled')
@@ -35,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="chambre" element={<Chambre />} />
+          <Route path="a-propos" element={<APropos />} />
           <Route path="contact" element={<Contact />} />
         </Routes>
         <Footer />
