@@ -5,5 +5,9 @@
     "reservation": "Reservation",
     "site_plan": "Site plan",
     "legal_mentions": "Legal mentions",
-    "contact_us": "Contact Us"
+    "contact_us": "Contact Us",
+    "private_bathroom": "Bathroom?",
+    "your_private_one": "your private one",
+    "private_intimity": "Your comfort",
+    "private_intimity_1": "in complete privacy"
 }

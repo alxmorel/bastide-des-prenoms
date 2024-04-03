@@ -26,10 +26,13 @@ h2,
 h3,
 h4,
 h5,
-h6,
-h7 {
+h6 {
   font-family: apercu-regular, sans-serif, 'Google Work', 'IBM Plew Serif';
   font-weight: 100;
+}
+
+p {
+  margin: 0;
 }
 
 $bdp_white: #fff;
