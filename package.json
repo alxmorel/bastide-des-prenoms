@@ -54,6 +54,7 @@
   "devDependencies": {
     "gh-pages": "^6.1.1",
     "sass": "^1.72.0",
-    "webpack": "^5.91.0"
+    "webpack": "^5.91.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.0.0"
   }
 }

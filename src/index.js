@@ -14,7 +14,7 @@ i18n
   .use(initReactI18next)
   .init({
     backend: {
-      loadPath: '/locales/{{lng}}.json',
+      loadPath: '/bastide-des-prenoms/locales/{{lng}}.json',
     },
     detection: {
       order: [

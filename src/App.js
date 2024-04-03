@@ -48,7 +48,7 @@ function App() {
           confirmAction={handleCookieAccept}
           leaveAction={handleCookieRefuse}
           description={
-            'Alexandre Morel cv uses cookies to deliver and enhance the quality of its services and to analyze traffic. If you agree, cookies are also used to serve advertising and to personalize the content and advertisements that you see. Learn more.'
+            'La Bastide des Prénoms uses cookies to deliver and enhance the quality of its services and to analyze traffic. If you agree, cookies are also used to serve advertising and to personalize the content and advertisements that you see. Learn more.'
           }
           accept={'AGREE'}
           refused={'NO THANKS'}

@@ -3,9 +3,9 @@ import './Home.scss'
 import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import Box from '@mui/material/Box'
-import ImageList from '@mui/material/ImageList'
-import ImageListItem from '@mui/material/ImageListItem'
+// import Box from '@mui/material/Box'
+// import ImageList from '@mui/material/ImageList'
+// import ImageListItem from '@mui/material/ImageListItem'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { useTranslation } from 'react-i18next'
@@ -25,28 +25,28 @@ function Home() {
     console.log(`Clicked thumb: ${item}`)
   }
 
-  const itemData = [
-    {
-      img: '/bastide-des-prenoms/image/bastide.jpg',
-      title: 'Bed',
-    },
-    {
-      img: '/bastide-des-prenoms/image/champ_lavande.jpg',
-      title: 'Books',
-    },
-    {
-      img: '/bastide-des-prenoms/image/ciel_bleu.jpg',
-      title: 'Sink',
-    },
-    {
-      img: '/bastide-des-prenoms/image/volets.jpg',
-      title: 'Kitchen',
-    },
-    {
-      img: '/bastide-des-prenoms/image/convivialite.jpg',
-      title: 'Blinds',
-    },
-  ]
+  // const itemData = [
+  //   {
+  //     img: '/bastide-des-prenoms/image/bastide.jpg',
+  //     title: 'Bed',
+  //   },
+  //   {
+  //     img: '/bastide-des-prenoms/image/champ_lavande.jpg',
+  //     title: 'Books',
+  //   },
+  //   {
+  //     img: '/bastide-des-prenoms/image/ciel_bleu.jpg',
+  //     title: 'Sink',
+  //   },
+  //   {
+  //     img: '/bastide-des-prenoms/image/volets.jpg',
+  //     title: 'Kitchen',
+  //   },
+  //   {
+  //     img: '/bastide-des-prenoms/image/convivialite.jpg',
+  //     title: 'Blinds',
+  //   },
+  // ]
 
   return (
     <div className="home_container">
@@ -100,53 +100,89 @@ function Home() {
           </Carousel>
         </div>
 
-        <div className='welcome_title'>
+        <div className="welcome_title">
           <p>Hello and welcome guest &#9996;&#127995;</p>
           <p>we're 100% dedicated to Bollène !</p>
         </div>
 
-        <div className='container_global_infos'>
-          <div className='global_info'>
-            <div className='icon'>
-              <img src='/image/icon/bed.svg' alt='fenetres ouvertes représentant un grand espace dans nos chambres' width={80} />
+        <div className="container_global_infos">
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/bed.svg"
+                alt="fenetres ouvertes représentant un grand espace dans nos chambres"
+                width={80}
+              />
             </div>
-            <p><b>A lot of space</b> in our room</p>
+            <p>
+              <b>A lot of space</b> in our room
+            </p>
           </div>
-          <div className='global_info'>
-            <div className='icon'>
-              <img src='/image/icon/olive-tree-bg_green.svg' alt='Relaxation, divertissement et détente assurés' width={80} />
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/olive-tree-bg_green.svg"
+                alt="Relaxation, divertissement et détente assurés"
+                width={80}
+              />
             </div>
-            <p><b>Relaxation</b> assurée</p>
+            <p>
+              <b>Relaxation</b> assurée
+            </p>
           </div>
-          <div className='global_info'>
-            <div className='icon'>
-              <img src='/image/icon/fireplace.svg' alt='Espaces conviviaux de détente seul comme à plusieurs' width={80} />
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/fireplace.svg"
+                alt="Espaces conviviaux de détente seul comme à plusieurs"
+                width={80}
+              />
             </div>
-            <p><b>Ambiance</b> chaleureuse et accueillante </p>
+            <p>
+              <b>Ambiance</b> chaleureuse et accueillante{' '}
+            </p>
           </div>
-          <div className='global_info'>
-            <div className='icon'>
-              <img src='/image/icon/window.svg' alt='Chambre avec vue dégagée' width={80} />
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/window.svg"
+                alt="Chambre avec vue dégagée"
+                width={80}
+              />
             </div>
-            <p><b>Vue dégagée</b> le charme provençal</p>
+            <p>
+              <b>Vue dégagée</b> le charme provençal
+            </p>
           </div>
           {/* <div className='global_info'>
             <div className='icon'>
-              <img src='/image/icon/shower_1.svg' alt='Chaque chambre contient une salle de bain privative' width={80} />
+              <img src='/bastide-des-prenoms/image/icon/shower_1.svg' alt='Chaque chambre contient une salle de bain privative' width={80} />
             </div>
             <p><b>Private bathroom</b> in our room</p>
           </div> */}
-          <div className='global_info'>
-            <div className='icon'>
-              <img src='/image/icon/sink.svg' alt='Chaque chambre contient une salle de bain privative' width={80} />
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/sink.svg"
+                alt="Chaque chambre contient une salle de bain privative"
+                width={80}
+              />
             </div>
-            <p><b>{t('private_bathroom')}</b> {t('your_private_one')}</p>
+            <p>
+              <b>{t('private_bathroom')}</b> {t('your_private_one')}
+            </p>
           </div>
-          <div className='global_info'>
-            <div className='icon'>
-              <img src='/image/icon/doorknob.svg' alt='Chaque chambre contient une salle de bain privative' width={80} />
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/doorknob.svg"
+                alt="Chaque chambre contient une salle de bain privative"
+                width={80}
+              />
             </div>
-            <p><b>{t('private_intimity')}</b> {t('private_intimity_1')}</p>
+            <p>
+              <b>{t('private_intimity')}</b> {t('private_intimity_1')}
+            </p>
           </div>
         </div>
 
