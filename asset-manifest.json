@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/bastide-des-prenoms/static/css/main.6a2c15f5.css",
-    "main.js": "/bastide-des-prenoms/static/js/main.87506446.js",
-    "static/js/453.f38eea9f.chunk.js": "/bastide-des-prenoms/static/js/453.f38eea9f.chunk.js",
+    "main.css": "/bastide-des-prenoms/static/css/main.2aa54026.css",
+    "main.js": "/bastide-des-prenoms/static/js/main.a8da389f.js",
+    "static/js/453.fa1665d3.chunk.js": "/bastide-des-prenoms/static/js/453.fa1665d3.chunk.js",
     "static/media/apercu_regular_pro.otf": "/bastide-des-prenoms/static/media/apercu_regular_pro.36c9dd0f0eebc290890b.otf",
     "static/media/Bendungan_Signature.otf": "/bastide-des-prenoms/static/media/Bendungan_Signature.019fa9edb4db853ffa9a.otf",
+    "static/media/AlergiaNormal-Regular.otf": "/bastide-des-prenoms/static/media/AlergiaNormal-Regular.cc4113acfa6bddbc8643.otf",
     "index.html": "/bastide-des-prenoms/index.html",
     "static/media/getFetch.cjs": "/bastide-des-prenoms/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.6a2c15f5.css.map": "/bastide-des-prenoms/static/css/main.6a2c15f5.css.map",
-    "main.87506446.js.map": "/bastide-des-prenoms/static/js/main.87506446.js.map",
-    "453.f38eea9f.chunk.js.map": "/bastide-des-prenoms/static/js/453.f38eea9f.chunk.js.map"
+    "main.2aa54026.css.map": "/bastide-des-prenoms/static/css/main.2aa54026.css.map",
+    "main.a8da389f.js.map": "/bastide-des-prenoms/static/js/main.a8da389f.js.map",
+    "453.fa1665d3.chunk.js.map": "/bastide-des-prenoms/static/js/453.fa1665d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a2c15f5.css",
-    "static/js/main.87506446.js"
+    "static/css/main.2aa54026.css",
+    "static/js/main.a8da389f.js"
   ]
 }
