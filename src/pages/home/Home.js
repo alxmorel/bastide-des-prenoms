@@ -9,6 +9,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { useTranslation } from 'react-i18next'
+import BookingForm from '../../components/booking-form/BookingForm'
 
 function Home() {
   const { t } = useTranslation()
@@ -100,13 +101,14 @@ function Home() {
         </div> */}
 
         <div className="image_container">
-          <h2 className="gimic">Culture par Nature</h2>
+          <h2 className="gimic">
+            Culture <br />
+            par Nature
+          </h2>
           <div className="image-wrapper">
-            <img
-              src="/bastide-des-prenoms/image/bastide_exterieur_1.jpg"
-              alt=""
-            />
+            <img src="/bastide-des-prenoms/image/champ_lavande.jpg" alt="" />
           </div>
+          <BookingForm />
         </div>
 
         <div className="welcome_title">

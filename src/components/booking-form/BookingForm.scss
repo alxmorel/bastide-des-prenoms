@@ -1,0 +1,91 @@
+@use '../../App.scss' as *;
+
+.bookingForm_container {
+  z-index: 100;
+  position: absolute;
+  bottom: -3em;
+  display: grid;
+  place-content: center;
+  padding: 0.5em;
+  width: 80vw;
+  // height: 80px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(175, 175, 175, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 28px;
+  border: 1px solid rgba(190, 190, 190, 0.18);
+  transition: all ease 0.3s;
+  .bookingForm_content {
+    display: flex;
+    gap: 1em;
+  }
+  .MuiInputBase-root {
+    border-radius: 7px;
+  }
+
+  .MuiInputBase-root > :first-child {
+    border-radius: 20px !important;
+  }
+
+  .btn_book {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 0px 0px #5ba561;
+
+    &:hover {
+      box-shadow: 0px 0px 10px #203b22;
+    }
+  }
+
+  .btn_number > button {
+    background-color: #5ba561;
+    color: white;
+    border: 1px solid #5ba561;
+    &:hover {
+      background-color: #467e4b;
+      border: 1px solid #529157;
+      box-shadow: 0px 0px 5px #3a663d;
+    }
+  }
+}
+
+body
+  > div.base-Popper-root.MuiPickersPopper-root[class*='css-'][class*='-MuiPopper-root-MuiPickersPopper-root']
+  > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPickersPopper-paper[class*='css-'][class*='-MuiPaper-root-MuiPickersPopper-paper']
+  > div
+  > div
+  > div
+  > div:nth-child(1) {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .bookingForm_container {
+    width: 750px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bookingForm_content {
+    flex-direction: column;
+  }
+
+  .bookingForm_container {
+    bottom: -5em;
+  }
+
+  .btn_book {
+    border-top-left-radius: 7px !important;
+    border-bottom-left-radius: 20px !important;
+    border-top-right-radius: 7px !important;
+    border-bottom-right-radius: 20px !important;
+    box-shadow: 0px 0px 0px #5ba561;
+
+    &:hover {
+      box-shadow: 0px 0px 20px #203b22;
+    }
+  }
+}

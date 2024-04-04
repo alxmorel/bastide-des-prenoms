@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './index.scss'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
@@ -29,6 +29,10 @@ function App() {
     localStorage.setItem('cookieEnabled', 'false')
     setcookieModalShow(false)
   }
+
+  useEffect(() => {
+    //console.clear() //Pour effacer le contenu de la console (licence error mui)
+  }, [])
 
   return (
     <div className="App">

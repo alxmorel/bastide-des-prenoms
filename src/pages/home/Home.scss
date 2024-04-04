@@ -21,13 +21,23 @@
   > h2 {
     position: absolute;
     font-size: 3em;
-    text-transform: capitalize;
-    font-family: bendungan-signature;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    letter-spacing: 0.1em;
     text-shadow: rgb(66, 66, 66) 0px 0px 38px;
     color: white;
   }
 
-  .image-wrapper img {
+  .gimic {
+    font-size: 5vw;
+    margin: 0;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    line-height: 1.5em;
+  }
+  .image-wrapper > img {
     width: 100%;
     border-radius: 15px;
     aspect-ratio: 16/9;
@@ -64,6 +74,7 @@
 
 .welcome_title {
   margin: 2em;
+  margin-top: 5em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -203,5 +214,11 @@
 @media screen and (max-width: 455px) {
   .container_global_infos {
     grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .gimic {
+    font-size: 3.5em !important;
   }
 }
