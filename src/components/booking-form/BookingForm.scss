@@ -62,6 +62,15 @@ body
   display: none;
 }
 
+body > div.base-Popper-root.MuiPickersPopper-root[class^='css-']
+> div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPickersPopper-paper[class^='css-']
+> div
+> div
+> div
+> div:nth-child(1) {
+  display: none;
+}
+
 @media screen and (min-width: 900px) {
   .bookingForm_container {
     width: 750px !important;
