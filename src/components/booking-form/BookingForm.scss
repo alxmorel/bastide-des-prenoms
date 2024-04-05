@@ -52,6 +52,10 @@
   }
 }
 
+.bookingForm_container .MuiInputBase-root{
+  border-radius: 20px !important;  
+}
+
 /* Block MUI from display message missing key*/
 body
   > div.base-Popper-root.MuiPickersPopper-root[class*='css-'][class*='-MuiPopper-root-MuiPickersPopper-root']

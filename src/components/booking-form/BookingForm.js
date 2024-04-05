@@ -1,5 +1,5 @@
 import './BookingForm.scss'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button, Grid, Typography } from '@mui/material'
@@ -13,6 +13,9 @@ import NumberInput from './QuantityInput'
 function BookingForm() {
   const [dateRange, setDateRange] = useState([null, null])
   const [nbGuests, setNbGuest] = useState(null)
+
+  const date = new Date();
+  date.setDate(date.getDate() - 1);
 
   const handleDateChange = (newDateRange) => {
     setDateRange(newDateRange)
@@ -32,11 +35,12 @@ function BookingForm() {
   return (
     <div className="bookingForm_container">
       <div className="bookingForm_content">
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="fr">
           <div className="datePicker_container">
             <DateRangePicker
               className="datePicker"
               value={dateRange}
+              // minDate={date}
               onChange={handleDateChange}
               renderInput={(startProps, endProps) => (
                 <React.Fragment>

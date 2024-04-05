@@ -21,11 +21,10 @@
   > h2 {
     position: absolute;
     font-size: 3em;
-    text-transform: uppercase;
-    font-family: 'Montserrat';
-    font-weight: 400;
+    text-transform: capitalize;
+    font-family:  apercu-regular;
     letter-spacing: 0.1em;
-    text-shadow: rgb(66, 66, 66) 0px 0px 38px;
+    // text-shadow: rgb(66, 66, 66) 0px 0px 38px;
     color: white;
   }
 
@@ -51,6 +50,10 @@
   display: inline-block;
   border-radius: 7px;
   overflow: hidden;
+}
+
+.carousel{
+  border-radius: 7px !important;
 }
 
 .carousel .slide img {
