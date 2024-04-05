@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bastide-des-prenoms/static/css/main.91fb7c25.css",
+    "main.css": "/bastide-des-prenoms/static/css/main.63e6c6c1.css",
     "main.js": "/bastide-des-prenoms/static/js/main.a8da389f.js",
     "static/js/453.fa1665d3.chunk.js": "/bastide-des-prenoms/static/js/453.fa1665d3.chunk.js",
     "static/media/apercu_regular_pro.otf": "/bastide-des-prenoms/static/media/apercu_regular_pro.36c9dd0f0eebc290890b.otf",
@@ -8,12 +8,12 @@
     "static/media/AlergiaNormal-Regular.otf": "/bastide-des-prenoms/static/media/AlergiaNormal-Regular.cc4113acfa6bddbc8643.otf",
     "index.html": "/bastide-des-prenoms/index.html",
     "static/media/getFetch.cjs": "/bastide-des-prenoms/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.91fb7c25.css.map": "/bastide-des-prenoms/static/css/main.91fb7c25.css.map",
+    "main.63e6c6c1.css.map": "/bastide-des-prenoms/static/css/main.63e6c6c1.css.map",
     "main.a8da389f.js.map": "/bastide-des-prenoms/static/js/main.a8da389f.js.map",
     "453.fa1665d3.chunk.js.map": "/bastide-des-prenoms/static/js/453.fa1665d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.91fb7c25.css",
+    "static/css/main.63e6c6c1.css",
     "static/js/main.a8da389f.js"
   ]
 }
