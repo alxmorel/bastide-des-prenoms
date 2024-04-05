@@ -3,52 +3,56 @@ import './Home.scss'
 import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import Box from '@mui/material/Box'
-import ImageList from '@mui/material/ImageList'
-import ImageListItem from '@mui/material/ImageListItem'
+// import Box from '@mui/material/Box'
+// import ImageList from '@mui/material/ImageList'
+// import ImageListItem from '@mui/material/ImageListItem'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe, faHouse } from '@fortawesome/free-solid-svg-icons'
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import { useTranslation } from 'react-i18next'
+import BookingForm from '../../components/booking-form/BookingForm'
 
 function Home() {
-  const onChange = (index, item) => {
-    console.log(`Slide changed to index ${index}`)
-  }
+  const { t } = useTranslation()
 
-  const onClickItem = (index, item) => {
-    console.log(`Clicked item: ${item}`)
-  }
+  // const onChange = (index, item) => {
+  //   console.log(`Slide changed to index ${index}`)
+  // }
 
-  const onClickThumb = (index, item) => {
-    console.log(`Clicked thumb: ${item}`)
-  }
+  // const onClickItem = (index, item) => {
+  //   console.log(`Clicked item: ${item}`)
+  // }
 
-  const itemData = [
-    {
-      img: 'image/bastide.jpg',
-      title: 'Bed',
-    },
-    {
-      img: 'image/champ_lavande.jpg',
-      title: 'Books',
-    },
-    {
-      img: 'image/ciel_bleu.jpg',
-      title: 'Sink',
-    },
-    {
-      img: 'image/volets.jpg',
-      title: 'Kitchen',
-    },
-    {
-      img: 'image/convivialite.jpg',
-      title: 'Blinds',
-    },
-  ]
+  // const onClickThumb = (index, item) => {
+  //   console.log(`Clicked thumb: ${item}`)
+  // }
+
+  // const itemData = [
+  //   {
+  //     img: '/bastide-des-prenoms/image/bastide.jpg',
+  //     title: 'Bed',
+  //   },
+  //   {
+  //     img: '/bastide-des-prenoms/image/champ_lavande.jpg',
+  //     title: 'Books',
+  //   },
+  //   {
+  //     img: '/bastide-des-prenoms/image/ciel_bleu.jpg',
+  //     title: 'Sink',
+  //   },
+  //   {
+  //     img: '/bastide-des-prenoms/image/volets.jpg',
+  //     title: 'Kitchen',
+  //   },
+  //   {
+  //     img: '/bastide-des-prenoms/image/convivialite.jpg',
+  //     title: 'Blinds',
+  //   },
+  // ]
 
   return (
     <div className="home_container">
       <div className="home_content">
-        <div className="carousel_container">
+        {/* <div className="carousel_container">
           <Carousel
             className="custom_carousel"
             showArrows={true}
@@ -61,39 +65,136 @@ function Home() {
             emulateTouch={true}
             stopOnHover={true}
             interval={4000}
+            swipeScrollTolerance={5}
           >
             <div>
               <img
-                src={'image/bastide.jpg'}
+                src={'/bastide-des-prenoms/image/bastide.jpg'}
                 alt="Une bastide et son jardin fleuri"
               />
-              {/* <p className="legend">Legend 1</p> */}
             </div>
             <div>
               <img
-                src={'image/champ_lavande.jpg'}
+                src={'/bastide-des-prenoms/image/champ_lavande.jpg'}
                 alt="Un vue dégagée donnant sur un magnifique champ de lavande"
               />
             </div>
             <div>
               <img
-                src={'image/ciel_bleu.jpg'}
+                src={'/bastide-des-prenoms/image/ciel_bleu.jpg'}
                 alt="Des pins et un ciel bleu, la campagne du Vaucluse"
               />
             </div>
             <div>
               <img
-                src={'image/volets.jpg'}
+                src={'/bastide-des-prenoms/image/volets.jpg'}
                 alt="Une bastide tout en pierre typique de la région"
               />
             </div>
             <div>
               <img
-                src={'image/convivialite.jpg'}
+                src={'/bastide-des-prenoms/image/convivialite.jpg'}
                 alt="Des moments de partage conviviaux"
               />
             </div>
           </Carousel>
+        </div> */}
+
+        <div className="image_container">
+          <h2 className="gimic">
+            Culture <br />
+            par Nature
+          </h2>
+          <div className="image-wrapper">
+            <img src="/bastide-des-prenoms/image/champ_lavande.jpg" alt="" />
+          </div>
+          <BookingForm />
+        </div>
+
+        <div className="welcome_title">
+          <p>Hello and welcome guest &#9996;&#127995;</p>
+          <p>we're 100% dedicated to Bollène !</p>
+        </div>
+
+        <div className="container_global_infos">
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/bed.svg"
+                alt="fenetres ouvertes représentant un grand espace dans nos chambres"
+                width={80}
+              />
+            </div>
+            <p>
+              <b>A lot of space</b> in our room
+            </p>
+          </div>
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/olive-tree-bg_green.svg"
+                alt="Relaxation, divertissement et détente assurés"
+                width={80}
+              />
+            </div>
+            <p>
+              <b>Relaxation</b> assurée
+            </p>
+          </div>
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/fireplace.svg"
+                alt="Espaces conviviaux de détente seul comme à plusieurs"
+                width={80}
+              />
+            </div>
+            <p>
+              <b>Ambiance</b> chaleureuse et accueillante{' '}
+            </p>
+          </div>
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/window.svg"
+                alt="Chambre avec vue dégagée"
+                width={80}
+              />
+            </div>
+            <p>
+              <b>Vue dégagée</b> le charme provençal
+            </p>
+          </div>
+          {/* <div className='global_info'>
+            <div className='icon'>
+              <img src='/bastide-des-prenoms/image/icon/shower_1.svg' alt='Chaque chambre contient une salle de bain privative' width={80} />
+            </div>
+            <p><b>Private bathroom</b> in our room</p>
+          </div> */}
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/sink.svg"
+                alt="Chaque chambre contient une salle de bain privative"
+                width={80}
+              />
+            </div>
+            <p>
+              <b>{t('private_bathroom')}</b> {t('your_private_one')}
+            </p>
+          </div>
+          <div className="global_info">
+            <div className="icon">
+              <img
+                src="/bastide-des-prenoms/image/icon/doorknob.svg"
+                alt="Chaque chambre contient une salle de bain privative"
+                width={80}
+              />
+            </div>
+            <p>
+              <b>{t('private_intimity')}</b> {t('private_intimity_1')}
+            </p>
+          </div>
         </div>
 
         <div className="bedrooms">
@@ -131,7 +232,10 @@ function Home() {
                 <h3>Miellerie</h3>
                 <p>Cultivez votre propre miel</p>
               </div>
-              <img src="image/miellerie.jpg" alt="Cultivez votre propre miel" />
+              <img
+                src="/bastide-des-prenoms/image/miellerie.jpg"
+                alt="Cultivez votre propre miel"
+              />
             </div>
             <div className="activity">
               <div className="activity_content">
@@ -139,7 +243,7 @@ function Home() {
                 <p>Promenez-vous dans les champs de lavande</p>
               </div>
               <img
-                src="image/catalogue-Lavandes-champs-30.jpg"
+                src="/bastide-des-prenoms/image/catalogue-Lavandes-champs-30.jpg"
                 alt="Promenez-vous dans les champs de lavande"
               />
             </div>
@@ -149,7 +253,7 @@ function Home() {
                 <p>Admirez de somptueux oliviers de provence</p>
               </div>
               <img
-                src="image/olivier.jpg"
+                src="/bastide-des-prenoms/image/olivier.jpg"
                 alt="Admirez de somptueux oliviers de provence"
               />
             </div>
@@ -159,7 +263,7 @@ function Home() {
                 <p>Profitez d'un moment de détente dans notre espace dédié</p>
               </div>
               <img
-                src="image/piscine_provence.png"
+                src="/bastide-des-prenoms/image/piscine_provence.png"
                 alt="Profitez d'un moment de détente dans notre espace de baignade dédié"
               />
             </div>

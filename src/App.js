@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './index.scss'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
@@ -6,14 +6,16 @@ import Modal from './components/modal/Modal'
 import Home from './pages/home/Home'
 import Chambre from './pages/chambre/Chambre'
 import Contact from './pages/contact/Contact'
-
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import APropos from './pages/a-propos/APropos'
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom' //react router pour l'utilisation classique
+import { HashRouter as Router, Route, Routes } from 'react-router-dom' //Hashrouter pour le github pages
+import { useTranslation } from 'react-i18next'
 
 function App() {
   const cookieEnabled = localStorage.getItem('cookieEnabled')
 
   const [cookieModalShow, setcookieModalShow] = useState(!cookieEnabled)
-
+  const { t } = useTranslation()
   const handleCookieAccept = () => {
     if (navigator.cookieEnabled) {
       document.cookie =
@@ -28,6 +30,10 @@ function App() {
     setcookieModalShow(false)
   }
 
+  useEffect(() => {
+    //console.clear() //Pour effacer le contenu de la console (licence error mui)
+  }, [])
+
   return (
     <div className="App">
       <Router>
@@ -35,6 +41,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="chambre" element={<Chambre />} />
+          <Route path="a-propos" element={<APropos />} />
           <Route path="contact" element={<Contact />} />
         </Routes>
         <Footer />
@@ -45,9 +52,7 @@ function App() {
           setModalShow={setcookieModalShow}
           confirmAction={handleCookieAccept}
           leaveAction={handleCookieRefuse}
-          description={
-            'Alexandre Morel cv uses cookies to deliver and enhance the quality of its services and to analyze traffic. If you agree, cookies are also used to serve advertising and to personalize the content and advertisements that you see. Learn more.'
-          }
+          description={t('cookies_legacy')}
           accept={'AGREE'}
           refused={'NO THANKS'}
           cookieModal={true}

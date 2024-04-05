@@ -5,6 +5,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .home_content {
   margin: 0.5em;
   display: flex;
@@ -12,7 +13,44 @@
   gap: 2em;
 }
 
-.custom_carousel {
+.image_container {
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  > h2 {
+    position: absolute;
+    font-size: 3em;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-shadow: rgb(66, 66, 66) 0px 0px 38px;
+    color: white;
+  }
+
+  .gimic {
+    font-size: 5vw;
+    margin: 0;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    line-height: 1.5em;
+  }
+  .image-wrapper > img {
+    width: 100%;
+    border-radius: 15px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    outline: 2px solid white;
+    outline-offset: -0.5em;
+  }
+}
+
+.image_container .image-wrapper {
+  display: inline-block;
+  border-radius: 7px;
+  overflow: hidden;
 }
 
 .carousel .slide img {
@@ -34,13 +72,37 @@
   display: none;
 }
 
+.welcome_title {
+  margin: 2em;
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.container_global_infos {
+  // display: flex;
+  // justify-content: space-evenly;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  text-align: center;
+
+  .icon {
+    text-align: center;
+  }
+}
+
 .bedrooms {
   width: 100%;
   margin: 1em 0 3em 0;
+
   .bedroom {
     display: flex;
     gap: 0.05em;
-    justify-content: space-around;
+    justify-content: space-between;
 
     .bed_card {
       cursor: pointer;
@@ -70,13 +132,14 @@
   > h2 {
     margin-top: 0;
   }
-  background-color: $bdp_light_green;
-  padding: 1em;
+
+  padding: 1em 0;
   border-radius: 7px;
+
   .activities {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5em;
+    gap: 2em;
     text-align: center;
 
     .activity {
@@ -124,6 +187,10 @@
 }
 
 @media screen and (max-width: 600px) {
+  .container_global_infos {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
   .container_activities {
     .activities {
       grid-template-columns: repeat(1, 1fr) !important;
@@ -136,9 +203,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .bedroom {
       flex-direction: column;
       gap: 1em;
     }
+  }
+}
+
+@media screen and (max-width: 455px) {
+  .container_global_infos {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .gimic {
+    font-size: 3.5em !important;
   }
 }

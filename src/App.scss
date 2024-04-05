@@ -1,6 +1,13 @@
 // @import url(_root.scss);
 
 @font-face {
+  font-family: alergia-regular;
+  src: url(../public/fonts/AlergiaNormal-Regular.otf);
+  font-weight: 300;
+  font-display: auto;
+}
+
+@font-face {
   font-family: apercu-regular;
   src: url(../public/fonts/apercu_regular_pro.otf);
   font-weight: 300;
@@ -26,10 +33,13 @@ h2,
 h3,
 h4,
 h5,
-h6,
-h7 {
-  font-family: apercu-regular, sans-serif, 'Google Work', 'IBM Plew Serif';
+h6 {
+  font-family: alergia-regular, sans-serif, 'Google Work', 'IBM Plew Serif';
   font-weight: 100;
+}
+
+p {
+  margin: 0;
 }
 
 $bdp_white: #fff;

@@ -7,6 +7,18 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import Backend from 'i18next-http-backend'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+
+let theme = createTheme({
+  palette: {
+    primary: {
+      main: '#5BA561',
+    },
+    secondary: {
+      main: '#F5F1E1',
+    },
+  },
+})
 
 i18n
   .use(Backend)
@@ -14,7 +26,7 @@ i18n
   .use(initReactI18next)
   .init({
     backend: {
-      loadPath: '/locales/{{lng}}.json',
+      loadPath: '/bastide-des-prenoms/locales/{{lng}}.json',
     },
     detection: {
       order: [
@@ -38,7 +50,9 @@ i18n
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 )
 
