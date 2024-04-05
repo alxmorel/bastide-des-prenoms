@@ -52,6 +52,7 @@
   }
 }
 
+/* Block MUI from display message missing key*/
 body
   > div.base-Popper-root.MuiPickersPopper-root[class*='css-'][class*='-MuiPopper-root-MuiPickersPopper-root']
   > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPickersPopper-paper[class*='css-'][class*='-MuiPaper-root-MuiPickersPopper-paper']
@@ -59,16 +60,26 @@ body
   > div
   > div
   > div:nth-child(1) {
-  display: none;
+  display: none !important;
 }
 
-body > div.base-Popper-root.MuiPickersPopper-root[class^='css-']
-> div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPickersPopper-paper[class^='css-']
-> div
-> div
-> div
-> div:nth-child(1) {
-  display: none;
+body > div[class^='base-Popper-root'][class$='MuiPickersPopper-root']
+> div[class^='MuiPaper-root'][class*='MuiPickersPopper-paper']
+> div > div > div > div:nth-child(1) {
+  display: none !important;
+}
+
+body > div[class*='base-Popper-root'][class*='MuiPickersPopper-root']
+> div[class*='MuiPaper-root'][class*='MuiPickersPopper-paper']
+> div > div > div > div:nth-child(1) {
+  display: none !important;
+}
+
+body > div.MuiDialog-root.MuiModal-root[class*='css-']
+> div.MuiDialog-container.MuiDialog-scrollPaper[class*='css-']
+> div > div > div > div.MuiPickersLayout-contentWrapper[class*='css-']
+> div > div:nth-child(1) {
+  display: none !important;
 }
 
 @media screen and (min-width: 900px) {
