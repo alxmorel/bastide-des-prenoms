@@ -10,5 +10,12 @@
     "your_private_one": "your private one",
     "private_intimity": "Your comfort",
     "private_intimity_1": "in complete privacy",
+    "guests": "Guests",
+    "check_in": "Check in",
+    "check_out": "Check out",
+    "book": "Book",
+    "incomplete_booking_info": "Please complete the booking information before proceeding.",
+    "booking_success": "The booking has been successfully completed.",
+    "booking_error": "An error occurred while booking. Please try again later.",
     "cookies_legacy": "La Bastide des Prénoms uses cookies to deliver and enhance the quality of its services and to analyze traffic. If you agree, cookies are also used to serve advertising and to personalize the content and advertisements that you see. Learn more."
 }

@@ -10,5 +10,14 @@
     "your_private_one": "personnelle",
     "private_intimity": "Votre confort",
     "private_intimity_1": "en pleine intimité",
+    "check_in": "Arrivée",
+    "check_out": "Départ",
+    "guests": "Invités",
+    "book": "Réserver",
+    "incomplete_booking_info": "Veuillez compléter les informations de réservation avant de continuer.",
+    "booking_success": "La réservation a été effectuée avec succès.",
+    "booking_error": "Une erreur s'est produite lors de la réservation. Veuillez réessayer plus tard.",
+    "our_guest_house_title": "Notre maison d'hôte",
+    "our_guest_house_text": "Profitez d'une expérience unique dans notre maison d'hôtes, où hospitalité s'accorde avec qualité et authenticité.",
     "cookies_legacy": "La Bastide des Prénoms utilise des cookies pour fournir et améliorer la qualité de ses services, ainsi que pour analyser le trafic. Si vous êtes d'accord, des cookies sont également utilisés pour diffuser de la publicité et personnaliser le contenu et les publicités que vous voyez. En savoir plus."
 }
