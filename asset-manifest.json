@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bastide-des-prenoms/static/css/main.79e632a9.css",
-    "main.js": "/bastide-des-prenoms/static/js/main.48de02c8.js",
+    "main.css": "/bastide-des-prenoms/static/css/main.935e8ef5.css",
+    "main.js": "/bastide-des-prenoms/static/js/main.70255c6e.js",
     "static/js/453.fa1665d3.chunk.js": "/bastide-des-prenoms/static/js/453.fa1665d3.chunk.js",
     "static/media/Montserrat-variable.ttf": "/bastide-des-prenoms/static/media/Montserrat-variable.7e687123cd4528224ce5.ttf",
     "static/media/BarlowCondensed-Regular.ttf": "/bastide-des-prenoms/static/media/BarlowCondensed-Regular.a51441e972d57b28e7c1.ttf",
@@ -10,12 +10,12 @@
     "static/media/AlergiaNormal-Regular.otf": "/bastide-des-prenoms/static/media/AlergiaNormal-Regular.cc4113acfa6bddbc8643.otf",
     "index.html": "/bastide-des-prenoms/index.html",
     "static/media/getFetch.cjs": "/bastide-des-prenoms/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.79e632a9.css.map": "/bastide-des-prenoms/static/css/main.79e632a9.css.map",
-    "main.48de02c8.js.map": "/bastide-des-prenoms/static/js/main.48de02c8.js.map",
+    "main.935e8ef5.css.map": "/bastide-des-prenoms/static/css/main.935e8ef5.css.map",
+    "main.70255c6e.js.map": "/bastide-des-prenoms/static/js/main.70255c6e.js.map",
     "453.fa1665d3.chunk.js.map": "/bastide-des-prenoms/static/js/453.fa1665d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.79e632a9.css",
-    "static/js/main.48de02c8.js"
+    "static/css/main.935e8ef5.css",
+    "static/js/main.70255c6e.js"
   ]
 }
