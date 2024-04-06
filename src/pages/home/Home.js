@@ -2,10 +2,12 @@ import './Home.scss'
 
 import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { useTranslation } from 'react-i18next'
 import BookingForm from '../../components/booking-form/BookingForm'
 import { useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
 
 function Home() {
   const { t } = useTranslation()
@@ -18,6 +20,7 @@ function Home() {
 
   const handleNavigateBedroom = (bedRoomId) => {
     navigate(`/chambre/${bedRoomId}`)
+    window.scrollTo({ top: 0 })
   }
 
   useEffect(() => {
@@ -180,7 +183,16 @@ function Home() {
                 src="/bastide-des-prenoms/image/chambre/modern-table-lamps-for-bedroom.jpg"
                 alt="chambre number 1"
               />
-              <p>Nom chambre</p>
+              <div className="room_desc">
+                <h4>Chambre Lavande</h4>
+                <p>
+                  Plongez dans un océan de calme et de sérénité au cœur des
+                  champs de lavande.
+                </p>
+                <Link to="/chambre/O">
+                  Voir la chambre <FontAwesomeIcon icon={faArrowRight} />
+                </Link>
+              </div>
             </div>
             <div className="bed_card" onClick={() => handleNavigateBedroom(1)}>
               <img
@@ -188,7 +200,16 @@ function Home() {
                 src="/bastide-des-prenoms/image/chambre/modern-bedroom-design.jpg"
                 alt="chambre number 2"
               />
-              <p>Nom chambre</p>
+              <div className="room_desc">
+                <h4>Suite des Oliviers</h4>
+                <p>
+                  Découvrez le charme authentique de la Provence parmi les
+                  oliviers centenaires.
+                </p>
+                <Link to="/chambre/1">
+                  Voir la chambre <FontAwesomeIcon icon={faArrowRight} />
+                </Link>
+              </div>
             </div>
             <div className="bed_card" onClick={() => handleNavigateBedroom(2)}>
               <img
@@ -196,7 +217,16 @@ function Home() {
                 src="/bastide-des-prenoms/image/chambre/modern-bedroom-chairs.jpg"
                 alt="chambre number 3"
               />
-              <p>Nom chambre</p>
+              <div className="room_desc">
+                <h4>Suite des Vignobles</h4>
+                <p>
+                  Immergez-vous dans l'univers viticole de la région depuis
+                  cette chambre élégante et confortable.
+                </p>
+                <Link to="/chambre/2">
+                  Voir la chambre <FontAwesomeIcon icon={faArrowRight} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
