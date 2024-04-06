@@ -1,17 +1,39 @@
 @use '../../App.scss' as *;
 
 .footer_container {
-  background-color: $bdp_light_green;
+  background-color: $bdp_gold;
   white-space: nowrap;
   padding: 1em;
   position: static;
+  text-align: center;
   bottom: 0;
   left: 0;
   right: 0;
   //   color: white;
   .container_adresse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 1em;
     margin: 2em;
+
+    .adresse {
+    }
+
+    .container_gmaps {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      > .iframe_map {
+        max-width: 700px;
+        height: 400px;
+        width: 100%;
+        border-radius: 20px;
+      }
+    }
   }
   .container_links {
     display: flex;

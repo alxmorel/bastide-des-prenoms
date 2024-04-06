@@ -64,14 +64,23 @@
     gap: 1em;
     padding: 1em;
     border-radius: 7px;
-    background: rgb(255, 235, 180);
+    // background: rgb(255, 235, 180);
+
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(175, 175, 175, 0.37);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(190, 190, 190, 0.18);
+    border-radius: 20px;
 
     .links {
       display: flex;
-      gap: 1em;
+      flex-direction: column;
+      gap: 0.3em;
+      padding: 1em;
       > div {
         display: flex;
-        flex-direction: column;
+        gap: 1em;
       }
     }
   }

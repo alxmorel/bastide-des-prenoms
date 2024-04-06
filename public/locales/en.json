@@ -14,6 +14,7 @@
     "check_in": "Check in",
     "check_out": "Check out",
     "book": "Book",
+    "view_on_google_maps": "View on Google Maps",
     "incomplete_booking_info": "Please complete the booking information before proceeding.",
     "booking_success": "The booking has been successfully completed.",
     "booking_error": "An error occurred while booking. Please try again later.",

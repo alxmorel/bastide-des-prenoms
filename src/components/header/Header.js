@@ -1,5 +1,5 @@
 import './Header.scss'
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,10 +9,16 @@ function Header() {
   const navigate = useNavigate()
   const { t, i18n } = useTranslation()
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const handleLanguageChange = (event) => {
     const newLanguage = event.target.value
     console.log('change langue : ', newLanguage)
     i18n.changeLanguage(newLanguage)
+  }
+
+  const toggleDisplayMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
   }
 
   return (
@@ -25,10 +31,16 @@ function Header() {
           height={80}
           onClick={() => navigate('/')}
         />
-        <div className="links_container">
-          <Link to="/">{t('home')}</Link>
-          <Link to="/a-propos">{t('about')}</Link>
-          <Link to="/contact">{t('contact')}</Link>
+        <div className={`links_container ${isMenuOpen ? 'active' : ''}`}>
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>
+            {t('home')}
+          </Link>
+          <Link to="/a-propos" onClick={() => setIsMenuOpen(false)}>
+            {t('about')}
+          </Link>
+          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+            {t('contact')}
+          </Link>
           <a className="underline" href="https://www.booking.com/index.fr.html">
             {t('reservation')}
           </a>
@@ -38,6 +50,8 @@ function Header() {
           src={'/bastide-des-prenoms/image/burger-menu.svg'}
           alt="burger menu icon"
           height={35}
+          onClick={toggleDisplayMenu}
+          style={{ filter: isMenuOpen ? 'invert(100%)' : 'none' }}
         />
         <div className="language_selector">
           <FontAwesomeIcon icon={faGlobe} />

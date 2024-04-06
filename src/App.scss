@@ -52,6 +52,7 @@ h6 {
   font-family: BarlowCondensed-Regular, sans-serif, 'Google Work',
     'IBM Plew Serif';
   font-weight: 100;
+  user-select: none;
 }
 
 h2 {
@@ -66,6 +67,7 @@ h4 {
 p {
   margin: 0;
   font-family: Montserrat-variable, sans-serif, 'Google Work', 'IBM Plew Serif';
+  // user-select: none;
 }
 
 .text_bold {
@@ -98,11 +100,12 @@ $bdp_green_light: #81ffcb;
 $bdp_green_medium: #23dd90;
 $bdp_purple_medium: #7667ff;
 
-$bdp_light_green: #f8ffe9;
-$bdp_desert_sand: #ddbea8;
 $bdp_cal_poly_green: #214e34;
 $bdp_grey: #747c92;
-$bdp_purple: #3d0b37;
+$bdp_brown: #816040;
+$bdp_light_green: #f8ffe9;
+$bdp_desert_sand: #ddbea8;
+$bdp_gold: #fffcef;
 
 $bdp_default_black: rgb(63, 63, 63, 1);
 
@@ -112,6 +115,7 @@ a {
   list-style-type: none;
   transition: 0.5s all ease;
   white-space: nowrap;
+  cursor: pointer;
 
   &:hover {
     color: #000;
