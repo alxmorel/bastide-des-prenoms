@@ -22,21 +22,27 @@
     position: absolute;
     font-size: 3em;
     text-transform: capitalize;
-    font-family:  apercu-regular;
+    font-family: apercu-regular;
     letter-spacing: 0.1em;
-    // text-shadow: rgb(66, 66, 66) 0px 0px 38px;
+    text-shadow: rgb(66, 66, 66) 0px 0px 38px;
     color: white;
   }
 
   .gimic {
-    font-size: 5vw;
+    z-index: 100;
+    font-family: Montserrat-variable;
+    font-size: 8vw;
     margin: 0;
     position: absolute;
     top: 1em;
-    left: 1em;
+    left: 0.5em;
     line-height: 1.5em;
+    padding: 0 0.5em;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.247);
   }
   .image-wrapper > img {
+    filter: contrast(0.9);
     width: 100%;
     border-radius: 15px;
     aspect-ratio: 16/9;
@@ -52,7 +58,7 @@
   overflow: hidden;
 }
 
-.carousel{
+.carousel {
   border-radius: 7px !important;
 }
 
@@ -78,15 +84,13 @@
 .welcome_title {
   margin: 2em;
   margin-top: 5em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+  display: grid;
+  place-content: center;
   gap: 0.5em;
 }
 
 .container_global_infos {
-  // display: flex;
-  // justify-content: space-evenly;
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(3, 1fr);
@@ -98,13 +102,47 @@
   }
 }
 
+.who_are_we_container {
+  display: flex;
+  gap: 2em;
+  padding: 0 3em;
+  position: relative;
+
+  div > figure {
+    .decorative_svg {
+      margin-top: 2em;
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    &:hover .decorative_svg {
+      transform: scale(3);
+    }
+  }
+
+  // &:hover img {
+  //   transform: scale(1.5);
+  // }
+  > .who_are_we_desc {
+    > h3 {
+    }
+    > p {
+      backdrop-filter: blur(1px);
+      border-radius: 7px;
+      font-family: Montserrat-variable;
+      // text-shadow: rgb(0, 0, 0) 0px 0px 38px;
+    }
+  }
+}
+
 .bedrooms {
   width: 100%;
-  margin: 1em 0 3em 0;
+  margin-top: 1em;
 
   .bedroom {
     display: flex;
-    gap: 0.05em;
+    gap: 1em;
     justify-content: space-between;
 
     .bed_card {
@@ -124,7 +162,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        aspect-ratio: 16/9;
+        aspect-ratio: 3/4;
         border-radius: 7px;
       }
     }
@@ -190,6 +228,14 @@
 }
 
 @media screen and (max-width: 600px) {
+  .who_are_we_container {
+    > div > figure {
+      margin: 0;
+    }
+  }
+  .welcome_title {
+    margin-top: 1em !important;
+  }
   .container_global_infos {
     grid-template-columns: repeat(2, 1fr) !important;
   }
@@ -198,6 +244,13 @@
     .activities {
       grid-template-columns: repeat(1, 1fr) !important;
     }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .who_are_we_container {
+    flex-direction: column-reverse;
+    text-align: center;
   }
 }
 
@@ -210,11 +263,21 @@
     .bedroom {
       flex-direction: column;
       gap: 1em;
+      margin: 1em !important;
+
+      img {
+        aspect-ratio: 16/9 !important;
+      }
     }
   }
 }
 
 @media screen and (max-width: 455px) {
+  .who_are_we_container {
+    > .decorative_svg {
+      // margin-top: 25em !important;
+    }
+  }
   .container_global_infos {
     grid-template-columns: repeat(1, 1fr) !important;
   }
@@ -222,6 +285,6 @@
 
 @media screen and (min-width: 1100px) {
   .gimic {
-    font-size: 3.5em !important;
+    font-size: 5.5em !important;
   }
 }

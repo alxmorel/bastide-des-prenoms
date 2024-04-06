@@ -10,6 +10,8 @@ import APropos from './pages/a-propos/APropos'
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom' //react router pour l'utilisation classique
 import { HashRouter as Router, Route, Routes } from 'react-router-dom' //Hashrouter pour le github pages
 import { useTranslation } from 'react-i18next'
+import 'react-date-range/dist/styles.css'
+import 'react-date-range/dist/theme/default.css'
 
 function App() {
   const cookieEnabled = localStorage.getItem('cookieEnabled')

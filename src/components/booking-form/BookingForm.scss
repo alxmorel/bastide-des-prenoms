@@ -52,8 +52,8 @@
   }
 }
 
-.bookingForm_container .MuiInputBase-root{
-  border-radius: 20px !important;  
+.bookingForm_container .MuiInputBase-root {
+  border-radius: 20px !important;
 }
 
 /* Block MUI from display message missing key*/
@@ -67,22 +67,35 @@ body
   display: none !important;
 }
 
-body > div[class^='base-Popper-root'][class$='MuiPickersPopper-root']
-> div[class^='MuiPaper-root'][class*='MuiPickersPopper-paper']
-> div > div > div > div:nth-child(1) {
+body
+  > div[class^='base-Popper-root'][class$='MuiPickersPopper-root']
+  > div[class^='MuiPaper-root'][class*='MuiPickersPopper-paper']
+  > div
+  > div
+  > div
+  > div:nth-child(1) {
   display: none !important;
 }
 
-body > div[class*='base-Popper-root'][class*='MuiPickersPopper-root']
-> div[class*='MuiPaper-root'][class*='MuiPickersPopper-paper']
-> div > div > div > div:nth-child(1) {
+body
+  > div[class*='base-Popper-root'][class*='MuiPickersPopper-root']
+  > div[class*='MuiPaper-root'][class*='MuiPickersPopper-paper']
+  > div
+  > div
+  > div
+  > div:nth-child(1) {
   display: none !important;
 }
 
-body > div.MuiDialog-root.MuiModal-root[class*='css-']
-> div.MuiDialog-container.MuiDialog-scrollPaper[class*='css-']
-> div > div > div > div.MuiPickersLayout-contentWrapper[class*='css-']
-> div > div:nth-child(1) {
+body
+  > div.MuiDialog-root.MuiModal-root[class*='css-']
+  > div.MuiDialog-container.MuiDialog-scrollPaper[class*='css-']
+  > div
+  > div
+  > div
+  > div.MuiPickersLayout-contentWrapper[class*='css-']
+  > div
+  > div:nth-child(1) {
   display: none !important;
 }
 
@@ -98,7 +111,8 @@ body > div.MuiDialog-root.MuiModal-root[class*='css-']
   }
 
   .bookingForm_container {
-    bottom: -5em;
+    width: 90vw !important;
+    position: unset !important;
   }
 
   .btn_book {

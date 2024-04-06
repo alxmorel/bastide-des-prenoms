@@ -20,12 +20,26 @@
   font-weight: 300;
   font-display: auto;
 }
+@font-face {
+  font-family: Montserrat-variable;
+  src: url(../public/fonts/Montserrat-variable.ttf);
+  font-weight: 300;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: BarlowCondensed-Regular;
+  src: url(../public/fonts/BarlowCondensed-Regular.ttf);
+  font-weight: 300;
+  font-display: auto;
+}
 
 body {
   font-family: apercu-regular, sans-serif, 'Google Work', 'IBM Plew Serif';
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1,
@@ -34,12 +48,41 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: alergia-regular, sans-serif, 'Google Work', 'IBM Plew Serif';
+  margin: 0.3em 0;
+  font-family: BarlowCondensed-Regular, sans-serif, 'Google Work',
+    'IBM Plew Serif';
   font-weight: 100;
 }
 
+h2 {
+  font-size: 3em;
+}
+h3 {
+  font-size: 2.5em;
+}
 p {
+  font-family: Montserrat-variable, sans-serif, 'Google Work', 'IBM Plew Serif';
   margin: 0;
+}
+
+.text_bold {
+  font-family: alergia-regular, sans-serif, 'Google Work', 'IBM Plew Serif';
+}
+
+div > figure {
+  border-radius: 7px;
+  overflow: hidden;
+
+  &:hover .zoom_in_img {
+    transform: scale(1.5);
+  }
+}
+div > figure > img {
+  width: 100%;
+  height: auto;
+  border-radius: 7px !important;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
 }
 
 $bdp_white: #fff;
@@ -69,5 +112,26 @@ a {
 
   &:hover {
     color: #000;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.fade-in-from-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

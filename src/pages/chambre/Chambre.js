@@ -1,11 +1,12 @@
-import { useParams } from 'react-router';
+import { useParams } from 'react-router'
 import './Chambre.scss'
 
 import React from 'react'
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 function Chambre() {
-  const { id } = useParams();
+  const { id } = useParams()
 
   const onChange = (index, item) => {
     console.log(`Slide changed to index ${index}`)
@@ -21,7 +22,7 @@ function Chambre() {
 
   return (
     <div className="chambre_container">
-      <div className='chambre_content'>
+      <div className="chambre_content">
         <div className="carousel_container">
           <Carousel
             className="custom_carousel"
@@ -39,7 +40,9 @@ function Chambre() {
           >
             <div>
               <img
-                src={'/bastide-des-prenoms/image/chambre/modern-bedroom-design.jpg'}
+                src={
+                  '/bastide-des-prenoms/image/chambre/modern-bedroom-design.jpg'
+                }
                 alt="Une bastide et son jardin fleuri"
               />
             </div>
@@ -69,7 +72,7 @@ function Chambre() {
             </div>
           </Carousel>
         </div>
-        <div className='images_horizontal_list'>
+        <div className="images_horizontal_list">
           <img
             src={'/bastide-des-prenoms/image/chambre/sdb_2.jpg'}
             alt="salle de bains design"
@@ -84,9 +87,14 @@ function Chambre() {
           />
         </div>
 
-        <div className='chambre_presentation'>
+        <div className="chambre_presentation">
           <p>
-          Plongez dans un monde de confort et d'intimité dans notre chambre d'hôte. Avec une ambiance chaleureuse et des détails raffinés, chaque instant promet une expérience inoubliable. Réservez dès maintenant pour une escapade parfaite, où le charme rencontre le bien-être.          </p>
+            Plongez dans un monde de confort et d'intimité dans notre chambre
+            d'hôte. Avec une ambiance chaleureuse et des détails raffinés,
+            chaque instant promet une expérience inoubliable. Réservez dès
+            maintenant pour une escapade parfaite, où le charme rencontre le
+            bien-être.{' '}
+          </p>
         </div>
       </div>
     </div>
