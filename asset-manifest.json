@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bastide-des-prenoms/static/css/main.07326ffb.css",
+    "main.css": "/bastide-des-prenoms/static/css/main.af702e21.css",
     "main.js": "/bastide-des-prenoms/static/js/main.f20504d1.js",
     "static/js/453.fa1665d3.chunk.js": "/bastide-des-prenoms/static/js/453.fa1665d3.chunk.js",
     "static/media/Montserrat-variable.ttf": "/bastide-des-prenoms/static/media/Montserrat-variable.7e687123cd4528224ce5.ttf",
@@ -10,12 +10,12 @@
     "static/media/AlergiaNormal-Regular.otf": "/bastide-des-prenoms/static/media/AlergiaNormal-Regular.cc4113acfa6bddbc8643.otf",
     "index.html": "/bastide-des-prenoms/index.html",
     "static/media/getFetch.cjs": "/bastide-des-prenoms/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.07326ffb.css.map": "/bastide-des-prenoms/static/css/main.07326ffb.css.map",
+    "main.af702e21.css.map": "/bastide-des-prenoms/static/css/main.af702e21.css.map",
     "main.f20504d1.js.map": "/bastide-des-prenoms/static/js/main.f20504d1.js.map",
     "453.fa1665d3.chunk.js.map": "/bastide-des-prenoms/static/js/453.fa1665d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.07326ffb.css",
+    "static/css/main.af702e21.css",
     "static/js/main.f20504d1.js"
   ]
 }
