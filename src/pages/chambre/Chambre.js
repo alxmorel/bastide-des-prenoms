@@ -1,19 +1,54 @@
 import { useParams } from 'react-router'
 import './Chambre.scss'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
-import { t } from 'i18next'
 import { Button } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
 function Chambre() {
+  const { t, i18n } = useTranslation()
   const { id } = useParams()
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(null)
   const [scrollLeft, setScrollLeft] = useState(0)
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [chambreData, setChambreData] = useState(null);
+
   const imagesHorizontalListRef = useRef(null)
+
+  const PUBLIC_IMG_URI = "/bastide-des-prenoms/image/chambre"
+  const PUBLIC_ICON_URI = "/bastide-des-prenoms/image/icon"
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if(!i18n.language) return
+        const response = await fetch(`/bastide-des-prenoms/data/chambres_${i18n.language}.json`);
+        //  const response = await fetch("/bastide-des-prenoms/data/chambres_fr.json");
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        console.log("data : ", data)
+        setChambreData(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, [id, i18n.language]);
+
+  const handleImageClick = (imageUrl) => {
+    console.log("affichage image url : ", imageUrl)
+    setSelectedImage(imageUrl);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImage(null);
+  };
 
   const handleMouseDown = (e) => {
     setIsDragging(true)
@@ -49,6 +84,11 @@ function Chambre() {
     console.log(`Clicked thumb: ${item}`)
   }
 
+  // Render loading state if data is not yet fetched
+  if (!chambreData) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="chambre_container">
       <div className="chambre_content">
@@ -67,38 +107,11 @@ function Chambre() {
             interval={4000}
             swipeScrollTolerance={5}
           >
-            <div>
-              <img
-                src={
-                  '/bastide-des-prenoms/image/chambre/modern-bedroom-design.jpg'
-                }
-                alt="Une bastide et son jardin fleuri"
-              />
-            </div>
-            <div>
-              <img
-                src={'/bastide-des-prenoms/image/champ_lavande.jpg'}
-                alt="Un vue dégagée donnant sur un magnifique champ de lavande"
-              />
-            </div>
-            <div>
-              <img
-                src={'/bastide-des-prenoms/image/ciel_bleu.jpg'}
-                alt="Des pins et un ciel bleu, la campagne du Vaucluse"
-              />
-            </div>
-            <div>
-              <img
-                src={'/bastide-des-prenoms/image/volets.jpg'}
-                alt="Une bastide tout en pierre typique de la région"
-              />
-            </div>
-            <div>
-              <img
-                src={'/bastide-des-prenoms/image/convivialite.jpg'}
-                alt="Des moments de partage conviviaux"
-              />
-            </div>
+            {chambreData.chambre[id].carouselImages.map((image, index) => (
+              <div key={index}>
+                <img src={`${PUBLIC_IMG_URI}/${image.img}`} alt={image.alt} />
+              </div>
+            ))}
           </Carousel>
         </div>
         <div
@@ -109,73 +122,59 @@ function Chambre() {
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="horizontal_image">
-            <img
-              src={'/bastide-des-prenoms/image/chambre/sdb_2.jpg'}
-              alt="salle de bains design"
-            />
-          </div>
-          <div className="horizontal_image">
-            <img
-              src={
-                '/bastide-des-prenoms/image/chambre/sdb_toilettes_vasque.jpg'
-              }
-              alt="Une bastide tout en pierre typique de la région"
-            />
-          </div>
-          <div className="horizontal_image">
-            <img
-              src={'/bastide-des-prenoms/image/volets.jpg'}
-              alt="Une bastide tout en pierre typique de la région"
-            />
-          </div>
+          {chambreData.chambre[id].horizontalListImages.map((image, index) => (
+            <div key={index} className="horizontal_image">
+              <img onClick={() => handleImageClick(`${PUBLIC_IMG_URI}/${image.img}`)} src={`${PUBLIC_IMG_URI}/${image.img}`} alt={image.alt} />
+            </div>
+          ))}
         </div>
         <div className="chambre_description">
           <div className="container_chambre_book">
             <div className="chambre_presentation">
-              <p>
-                Plongez dans un monde de confort et d'intimité dans notre
-                chambre d'hôte. Avec une ambiance chaleureuse et des détails
-                raffinés, chaque instant promet une expérience inoubliable.
-              </p>
-              <p>
-                Réservez dès maintenant pour une escapade parfaite, où le charme
-                rencontre le bien-être.
-              </p>
+              {chambreData.chambre[id].description
+                .map((text, index) => (
+                  <p key={index}>{text}</p>
+                ))}
             </div>
             <div className="book_this_bedroom">
-              <h4>Réserver cette chambre</h4>
+              <h4>{chambreData.general.book_this_room}</h4>
               <div className="container_book_now_infos">
                 <div className="links">
                   <div>
                     <FontAwesomeIcon icon={faPhone} />
-                    <a href="tel:+33614511027">(+33) 6 14 51 10 27</a>
+                    <a href={`tel:${chambreData.general.phoneLink}`}>{chambreData.general.phoneNumber}</a>
                   </div>
                   <div>
                     <FontAwesomeIcon icon={faEnvelope} />
                     <a
                       className="underline"
-                      href="mailto:bastidedesprenoms.info@gmail.com"
+                      href={`mailto:${chambreData.general.emailAddress}`}
                     >
-                      bastidedesprenoms.info@gmail.com
+                      {chambreData.general.emailAddress}
                     </a>
                   </div>
                 </div>
                 <div className="follow_us">
-                  <p>Suivez nous & partagez votre expérience</p>
+                  <p> {chambreData.general.follow_us}</p>
                   <div className="share_icons">
-                    <a
-                      href="https://instagram.com/bastide-des-prenoms"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <img
-                        src="/bastide-des-prenoms/image/icon/instagram.svg"
-                        alt="instagram icon"
-                        width={36}
-                        height={36}
-                      />
-                    </a>
+                    {
+                      chambreData.general.networks.map((network, index) => (
+                        <a
+                          key={index}
+                          href={network.link}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src={`${PUBLIC_ICON_URI}/${network.logo}`}
+                            alt={network.alt}
+                            width={36}
+                            height={36}
+                          />
+                        </a>
+                      ))
+                    }
+
                   </div>
                 </div>
               </div>
@@ -183,59 +182,38 @@ function Chambre() {
                 className="btn_book_now"
                 variant="contained"
                 color="primary"
-                href="https://www.booking.com/index.fr.html"
-              >
+                href={chambreData.chambre[id].bookingLink}>
                 {t('book')}
               </Button>
             </div>
           </div>
         </div>
         <div className="additional_info">
-          <div className="additional_info_card">
-            <img
-              src="/bastide-des-prenoms/image/chambre/icon/terrasse.svg"
-              alt="terrasse"
-              width={40}
-              height={40}
-            ></img>
-            <div className="desc">
-              <p className="bold-text">Balcon privé avec vue</p>
-              <p>
-                Profitez d'une vue imprenable depuis votre propre balcon privé.
-              </p>
+          {chambreData.chambre[id].facilities.map((facility, index) => (
+            <div key={index} className="additional_info_card">
+              <img
+                src={`${PUBLIC_ICON_URI}/${facility.icon}`}
+                alt={facility.icon}
+                width={40}
+                height={40}
+              ></img>
+              <div className="desc">
+                <p className="bold-text">{facility.title}</p>
+                <p>
+                  {facility.label}
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="additional_info_card">
-            <img src="" alt="" width={40} height={40}></img>
-            <div className="desc">
-              <p className="bold-text">Connexion Wi-Fi haut débit</p>
-              <p>
-                Restez connecté avec une connexion Internet rapide et fiable.
-              </p>
-            </div>
-          </div>
-          <div className="additional_info_card">
-            <img src="" alt="" width={40} height={40}></img>
-            <div className="desc">
-              <p className="bold-text">Climatisation réglable</p>
-              <p>
-                Maintenez une température confortable quelle que soit la météo
-                extérieure.
-              </p>
-            </div>
-          </div>
-          <div className="additional_info_card">
-            <img src="" alt="" width={40} height={40}></img>
-            <div className="desc">
-              <p className="bold-text">Produits de toilette de luxe</p>
-              <p>
-                Profitez d'articles de toilette haut de gamme pour une
-                expérience de détente ultime.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+      {selectedImage && (
+        <div className="fullscreen-overlay" onClick={handleCloseModal}>
+          <div className="fullscreen-image-container">
+            <img src={selectedImage} alt="Fullscreen" />
+          </div>
+        </div>
+      )}
     </div>
   )
 }

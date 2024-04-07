@@ -1,0 +1,66 @@
+{
+    "general": {
+        "book_this_room": "Réservez cette chambre",
+        "phoneNumber": "(+33) 6 14 51 10 27",
+        "phoneLink": "+33614511027",
+        "emailAddress": "bastidedesprenoms.info@gmail.com",
+        "follow_us": "Suivez-nous et partagez votre expérience",
+        "networks": [
+            {
+                "logo": "instagram.svg",
+                "alt": "Logo Instagram",
+                "link": "https://instagram.com/bastide-des-prenoms"
+            }
+        ],
+        "bookingLink": "https://www.booking.com/index.fr.html"
+    },
+    "chambre": [
+        {
+            "id": 1,
+            "title": "Suite des Oliviers",
+            "description": [
+                "Plongez dans un monde de confort et d'intimité dans notre chambre d'hôte.",
+                "Avec une ambiance chaleureuse et des détails raffinés, chaque instant promet une expérience inoubliable. Réservez dès maintenant pour une escapade parfaite, où le charme rencontre le bien-être."
+            ],
+            "bookingLink": "https://www.booking.com/index.fr.html",
+            "carouselImages": [
+                {
+                    "img": "modern-bedroom-design.jpg",
+                    "alt": "Une chambre moderne, spacieuse et design"
+                }
+            ],
+            "horizontalListImages": [
+                {
+                    "img": "sdb_2.jpg",
+                    "alt": "Chambre design"
+                },
+                {
+                    "img": "sdb_1.jpg",
+                    "alt": "Toilette salle de bain"
+                }
+            ],
+            "facilities": [
+                {
+                    "icon": "terrasse.svg",
+                    "title": "Balcon privé avec vue",
+                    "label": "Profitez d'une vue imprenable depuis votre propre balcon privé."
+                },
+                {
+                    "icon": "wifi.svg",
+                    "title": "Connexion Wi-Fi haut débit",
+                    "label": "Restez connecté avec une connexion Internet rapide et fiable."
+                },
+                {
+                    "icon": "ice-cream.svg",
+                    "title": "Climatisation réglable",
+                    "label": "Maintenez une température confortable quelle que soit la météo extérieure."
+                },
+                {
+                    "icon": "bath.svg",
+                    "title": "Produits de toilette de luxe",
+                    "label": "Profitez d'articles de toilette haut de gamme pour une expérience de détente ultime."
+                }
+            ]
+        }
+    ]
+}

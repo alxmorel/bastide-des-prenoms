@@ -1,0 +1,66 @@
+{
+    "general": {
+        "book_this_room": "Book this room",
+        "phoneNumber": "(+33) 6 14 51 10 27",
+        "phoneLink": "+33614511027",
+        "emailAddress": "bastidedesprenoms.info@gmail.com",
+        "follow_us": "Follow us & share your experience",
+        "networks": [
+            {
+                "logo": "instagram.svg",
+                "alt": "Instagram Logo",
+                "link": "https://instagram.com/bastide-des-prenoms"
+            }
+        ],
+        "bookingLink": "https://www.booking.com/index.fr.html"
+    },
+    "chambre": [
+        {
+            "id": 1,
+            "title": "Olive Suite",
+            "description": [
+                "Dive into a world of comfort and intimacy in our guest room.",
+                "With a warm atmosphere and refined details, every moment promises an unforgettable experience. Book now for a perfect getaway where charm meets well-being."
+            ],
+            "bookingLink": "https://www.booking.com/index.fr.html",
+            "carouselImages": [
+                {
+                    "img": "modern-bedroom-design.jpg",
+                    "alt": "A modern, spacious, and stylish bedroom"
+                }
+            ],
+            "horizontalListImages": [
+                {
+                    "img": "sdb_2.jpg",
+                    "alt": "Design room"
+                },
+                {
+                    "img": "sdb_1.jpg",
+                    "alt": "Bathroom toilet"
+                }
+            ],
+            "facilities": [
+                {
+                    "icon": "terrasse.svg",
+                    "title": "Private balcony with view",
+                    "label": "Enjoy a breathtaking view from your own private balcony."
+                },
+                {
+                    "icon": "wifi.svg",
+                    "title": "High-speed Wi-Fi connection",
+                    "label": "Stay connected with fast and reliable Internet connection."
+                },
+                {
+                    "icon": "ice-cream.svg",
+                    "title": "Adjustable air conditioning",
+                    "label": "Maintain a comfortable temperature regardless of the outdoor weather."
+                },
+                {
+                    "icon": "bath.svg",
+                    "title": "Luxury toiletries",
+                    "label": "Enjoy premium toiletries for the ultimate relaxation experience."
+                }
+            ]
+        }
+    ]
+}
