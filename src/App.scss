@@ -67,7 +67,7 @@ h4 {
 p {
   margin: 0;
   font-family: Montserrat-variable, sans-serif, 'Google Work', 'IBM Plew Serif';
-  // user-select: none;
+  user-select: none;
 }
 
 .text_bold {
@@ -126,10 +126,16 @@ a {
   animation: fadeIn 1s ease-in-out;
 }
 
-.fade-in-from-left {
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: fadeIn 1s ease-out forwards;
+.fade-in-left {
+  animation: fade-in-left 1s ease-in 0s 1 normal forwards;
+}
+
+.fade-in-from-right {
+  animation: fade-in-right 1s ease-in 0s 1 normal none;
+}
+
+.fade-in-right {
+  animation: fade-in-right 1s cubic-bezier(0.22, 1, 0.36, 1) 0s 1 normal none;
 }
 
 @keyframes fadeIn {
@@ -140,5 +146,29 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

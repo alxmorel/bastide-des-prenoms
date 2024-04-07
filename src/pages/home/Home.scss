@@ -120,6 +120,8 @@
   gap: 2em;
   padding: 0 3em;
   position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 
   div > figure {
     .decorative_svg {
@@ -152,6 +154,7 @@
 .bedrooms {
   width: 100%;
   margin-top: 1em;
+  opacity: 0;
 
   .bedroom {
     display: flex;
@@ -199,6 +202,7 @@
   padding: 1em 0;
   border-radius: 7px;
   padding: 1em;
+  opacity: 0;
   > h2 {
     margin-top: 0;
   }
@@ -255,6 +259,7 @@
 
 @media screen and (max-width: 600px) {
   .who_are_we_container {
+    padding: 1em !important;
     > div > figure {
       margin: 0;
     }

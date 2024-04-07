@@ -51,19 +51,21 @@ function Footer() {
           ></iframe>
         </div>
       </div>
-      <a onClick={() => backToTop()}>HAUT DE PAGE ^</a>
+      <div className="container_bottom_footer">
+        <a onClick={() => backToTop()}>HAUT DE PAGE ^</a>
 
-      <div className="container_links">
-        <Link to="/">{t('home')}</Link>
-        <Link to="/a-propos">{t('about')}</Link>
-        <Link to="/contact">{t('contact')}</Link>
+        <div className="container_links">
+          <Link to="/">{t('home')}</Link>
+          <Link to="/a-propos">{t('about')}</Link>
+          <Link to="/contact">{t('contact')}</Link>
+        </div>
+        <div className="container_legals">
+          <Link to="/site-plan">{t('site_plan')}</Link>
+          <Link to="/legal-notice">{t('legal_mentions')}</Link>
+          <Link to="/cookie-policy">{t('cookie_policy')}</Link>
+        </div>
+        <div className="copyright">© 2024 La Bastide des Prénoms</div>
       </div>
-      <div className="container_legals">
-        <Link to="/site-plan">{t('site_plan')}</Link>
-        <Link to="/legal-notice">{t('legal_mentions')}</Link>
-        <Link to="/cookie-policy">{t('cookie_policy')}</Link>
-      </div>
-      <div className="copyright">© 2024 La Bastide des Prénoms</div>
     </footer>
   )
 }

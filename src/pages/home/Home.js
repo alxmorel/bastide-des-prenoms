@@ -15,8 +15,11 @@ function Home() {
 
   const [isOurGuestHouseVisible, setIsOurGuestHouseVisible] = useState(false)
   const [isBedroomVisible, setIsBedroomVisible] = useState(false)
+  const [isActivityVisible, setIsActivityVisible] = useState(false)
+
   const ourGuestHouseRef = useRef(null)
   const bedroomRef = useRef(null)
+  const activityRef = useRef(null)
 
   const handleNavigateBedroom = (bedRoomId) => {
     navigate(`/chambre/${bedRoomId}`)
@@ -27,29 +30,71 @@ function Home() {
     const handleScroll = () => {
       const ourGuestHouse = ourGuestHouseRef.current
       const bedroom = bedroomRef.current
-      if (!ourGuestHouse || !bedroom) return
+      const activity = activityRef.current
+
+      if (!ourGuestHouse || !bedroom || !activity) return
 
       const rect1 = ourGuestHouse.getBoundingClientRect()
       const rect2 = bedroom.getBoundingClientRect()
+      const rect3 = activity.getBoundingClientRect()
+
       const windowHeight =
         window.innerHeight || document.documentElement.clientHeight
-      const middleOfWindow = windowHeight / 2
-      const containerMiddle1 = rect1.top + rect1.height / 2
-      const containerMiddle2 = rect2.top + rect2.height / 2
 
-      if (!isOurGuestHouseVisible && containerMiddle1 < middleOfWindow) {
+      // Utiliser la moitié de la fenêtre si l'élément est déjà visible
+      const windowPart = isOurGuestHouseVisible
+        ? windowHeight / 2
+        : windowHeight
+
+      // Si l'élément n'est pas encore visible et qu'il est dans la fenêtre ou dans la moitié inférieure de la fenêtre
+      if (!isOurGuestHouseVisible && rect1.top < windowPart)
         setIsOurGuestHouseVisible(true)
-      }
-      if (!isBedroomVisible && containerMiddle2 < middleOfWindow) {
+
+      // Utiliser la moitié de la fenêtre si l'élément n'est pas déjà visible
+      const windowPart2 = !isBedroomVisible ? windowHeight / 1.5 : windowHeight
+
+      if (!isBedroomVisible && rect2.top < windowPart2)
         setIsBedroomVisible(true)
-      }
+
+      const windowPart3 = !isActivityVisible ? windowHeight / 1.5 : windowHeight
+      if (!isActivityVisible && rect3.top < windowPart3)
+        setIsActivityVisible(true)
     }
+
+    handleScroll()
 
     window.addEventListener('scroll', handleScroll)
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [isOurGuestHouseVisible, isBedroomVisible]) // Assurez-vous d'ajouter ces états dans le tableau de dépendances
+  }, [isOurGuestHouseVisible, isBedroomVisible])
+
+  useEffect(() => {
+    if (isOurGuestHouseVisible) {
+      const ourGuestHouseElement = ourGuestHouseRef.current
+      if (ourGuestHouseElement) {
+        ourGuestHouseElement.style.opacity = '1'
+      }
+    }
+  }, [isOurGuestHouseVisible])
+
+  useEffect(() => {
+    if (isBedroomVisible) {
+      const ourBedroomVisible = bedroomRef.current
+      if (ourBedroomVisible) {
+        ourBedroomVisible.style.opacity = '1'
+      }
+    }
+  }, [isBedroomVisible])
+
+  useEffect(() => {
+    if (isActivityVisible) {
+      const activityVisible = activityRef.current
+      if (activityVisible) {
+        activityVisible.style.opacity = '1'
+      }
+    }
+  }, [isActivityVisible])
 
   return (
     <>
@@ -177,9 +222,7 @@ function Home() {
 
           <div
             ref={bedroomRef}
-            className={`bedrooms ${
-              isBedroomVisible ? 'fade-in-from-left' : ''
-            }`}
+            className={`bedrooms ${isBedroomVisible ? 'fade-in-left' : ''}`}
           >
             <h2>Nos chambres</h2>
             <div className="bedroom">
@@ -248,7 +291,12 @@ function Home() {
 
           <div className=""></div>
 
-          <div className="container_activities">
+          <div
+            ref={activityRef}
+            className={`container_activities ${
+              isActivityVisible ? 'fade-in-from-right' : ''
+            }`}
+          >
             <h2>Nos activités et espaces naturels</h2>
             <div className="activities">
               <div className="activity">

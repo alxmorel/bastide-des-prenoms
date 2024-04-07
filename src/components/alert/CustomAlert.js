@@ -10,7 +10,7 @@ import CloseIcon from '@mui/icons-material/Close'
 function CustomAlert({ openAlert, onClose, icon = '', severity, children }) {
   return (
     <>
-      <div className={`alert ${openAlert ? ' open' : ''}`}>
+      <div className={`alert ${openAlert ? ' open fade-in-right' : ''} `}>
         <Alert
           icon={
             icon === 'success' ? (

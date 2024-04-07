@@ -94,7 +94,8 @@
 
 .links_container.active {
   z-index: 100;
-  display: flex !important;
+  opacity: 1;
+  // display: flex !important;
   flex-direction: column !important;
   justify-content: center;
   align-items: center;

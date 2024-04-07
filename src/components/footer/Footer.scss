@@ -1,9 +1,14 @@
 @use '../../App.scss' as *;
 
 .footer_container {
-  background-color: $bdp_gold;
+  color: white;
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
   white-space: nowrap;
-  padding: 1em;
   position: static;
   text-align: center;
   bottom: 0;
@@ -16,9 +21,25 @@
     align-items: center;
     text-align: center;
     gap: 1em;
-    margin: 2em;
+    padding: 1em;
+    color: black;
+    background-color: rgb(251, 251, 251);
+    a {
+      color: black;
+      &:hover {
+        color: black;
+      }
+    }
 
     .adresse {
+      display: flex;
+      flex-direction: column;
+      > div > p {
+        user-select: unset;
+      }
+      a {
+        margin: 1em;
+      }
     }
 
     .container_gmaps {
@@ -35,20 +56,31 @@
       }
     }
   }
-  .container_links {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    margin: 1em;
-  }
-  .container_legals {
-    display: flex;
-    justify-content: center;
-    > a {
-      padding: 1em;
+
+  .container_bottom_footer {
+    padding: 1em;
+    background: rgb(139, 102, 67);
+    background: linear-gradient(
+      159deg,
+      rgba(139, 102, 67, 1) 0%,
+      rgba(152, 122, 97, 1) 50%,
+      rgba(221, 190, 168, 1) 100%
+    );
+    .container_links {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      margin: 1em;
     }
-  }
-  .copyright {
-    text-align: center;
+    .container_legals {
+      display: flex;
+      justify-content: center;
+      > a {
+        padding: 1em;
+      }
+    }
+    .copyright {
+      text-align: center;
+    }
   }
 }

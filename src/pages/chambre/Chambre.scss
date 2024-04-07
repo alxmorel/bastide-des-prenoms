@@ -44,43 +44,96 @@
 
 .chambre_description {
   display: flex;
-  margin: 1em;
+  margin: 1em 0;
 
-  .chambre_presentation {
-    //   width: 50vw;
-    margin: 1em 2em;
-    font-family: alergia-regular;
-    line-height: 1.5em;
+  .container_chambre_book {
+    display: flex;
 
-    > p {
-      margin: 1em 0;
+    .chambre_presentation {
+      //   width: 50vw;
+      margin: 1em 2em;
+      font-family: alergia-regular;
+      line-height: 1.5em;
+
+      > p {
+        margin: 1em 0;
+      }
+    }
+
+    .book_this_bedroom {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      border-radius: 20px;
+      // background: rgb(255, 235, 180);
+
+      background: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 8px 32px 0 rgba(175, 175, 175, 0.37);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(190, 190, 190, 0.18);
+
+      > h4 {
+        text-align: center;
+      }
+
+      .container_book_now_infos {
+        display: flex;
+        flex-direction: column;
+        .links,
+        .follow_us {
+          display: flex;
+          flex-direction: column;
+          gap: 0.3em;
+          padding: 0.5em 1em;
+          > div {
+            display: flex;
+            gap: 1em;
+          }
+        }
+
+        .follow_us {
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+        > .btn_book_now {
+          border-radius: 20px !important;
+          // width: 100%;
+        }
+      }
     }
   }
+}
 
-  .book_this_bedroom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
+.additional_info {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+
+  .additional_info_card {
     padding: 1em;
-    border-radius: 7px;
-    // background: rgb(255, 235, 180);
-
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 8px 32px 0 rgba(175, 175, 175, 0.37);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border: 1px solid rgba(190, 190, 190, 0.18);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
     border-radius: 20px;
 
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3em;
-      padding: 1em;
-      > div {
-        display: flex;
-        gap: 1em;
+    > img {
+    }
+    > .desc {
+      > .bold-text {
+        font-weight: bold;
+        margin-bottom: 0.5em;
       }
     }
   }
@@ -91,5 +144,36 @@
     .horizontal_image > img {
       aspect-ratio: 4/3 !important;
     }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .chambre_description {
+  }
+  .container_chambre_book {
+    flex-direction: column-reverse !important;
+    gap: 0 !important;
+
+    .book_this_bedroom {
+      gap: 0 !important;
+      .container_book_now_infos {
+        // flex-direction: row !important;
+        // justify-content: center;
+        // gap: 1em;
+
+        .links {
+          align-items: center !important;
+        }
+        .follow_us {
+          > p {
+            // display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .additional_info {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }

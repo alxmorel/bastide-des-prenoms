@@ -32,7 +32,7 @@ function BookingForm() {
     console.log('Date range is : ', dateRange[0].$d, ' : ', dateRange[1].$d)
     console.log('nb guest : ', nbGuests)
     if (!dateRange[0] || !dateRange[1] || !nbGuests) {
-      setBookingStatus('incomplete')
+      setBookingStatus('warning')
       setOpenAlert(true)
       return
     }
@@ -72,16 +72,18 @@ function BookingForm() {
 
   return (
     <>
-      <CustomAlert
-        openAlert={openAlert}
-        onClose={() => setOpenAlert(false)}
-        icon={bookingStatus === 'error' ? 'error' : 'warning'}
-        severity={bookingStatus === 'error' ? 'error' : 'warning'}
-      >
-        {bookingStatus === 'incomplete' && t('incomplete_booking_info')}
-        {bookingStatus === 'success' && t('booking_success')}
-        {bookingStatus === 'error' && t('booking_error')}
-      </CustomAlert>
+      {bookingStatus && (
+        <CustomAlert
+          openAlert={openAlert}
+          onClose={() => setOpenAlert(false)}
+          icon={bookingStatus}
+          severity={bookingStatus}
+        >
+          {bookingStatus === 'warning' && t('incomplete_booking_info')}
+          {bookingStatus === 'success' && t('booking_success')}
+          {bookingStatus === 'error' && t('booking_error')}
+        </CustomAlert>
+      )}
       <div className="bookingForm_container">
         <div className="bookingForm_content">
           <LocalizationProvider dateAdapter={AdapterDayjs} locale={t.language}>
